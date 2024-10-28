@@ -1,10 +1,13 @@
-require "lutaml/model"
+# lib/reqif/req_if_header.rb
+require_relative "time_helper"
 
 module Reqif
   class ReqIfHeader < Lutaml::Model::Serializable
+    include TimeHelper
+
     attribute :identifier, :string
     attribute :comment, :string
-    attribute :creation_time, :time
+    attribute :creation_time, :string # Changed from :time to :string
     attribute :repository_id, :string
     attribute :req_if_tool_id, :string
     attribute :req_if_version, :string
@@ -23,6 +26,14 @@ module Reqif
       map_element "REQ-IF-VERSION", to: :req_if_version
       map_element "SOURCE-TOOL-ID", to: :source_tool_id
       map_element "TITLE", to: :title
+    end
+
+    def creation_time=(time_str)
+      @creation_time = time_str
+    end
+
+    def creation_time
+      TimeHelper.parse_time(@creation_time)
     end
   end
 end
