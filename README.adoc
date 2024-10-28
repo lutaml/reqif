@@ -1,0 +1,73 @@
+= ReqIF Ruby library
+
+The `reqif` library is a parser and generator for ReqIF XML documents.
+
+It is intended to be used to parse and generate ReqIF XML v1.2 documents.
+
+== Installation
+
+Add this line to your application's Gemfile:
+
+[source,ruby]
+----
+gem 'reqif'
+----
+
+And then execute:
+
+[source]
+----
+$ bundle install
+----
+
+Or install it yourself as:
+
+[source]
+----
+$ gem install reqif
+----
+
+
+== Usage
+
+To parse a ReqIF XML document:
+
+[source,ruby]
+----
+require 'reqif'
+
+reqif = Reqif::ReqIf.new(File.read('reqif.xml'))
+puts reqif.title
+puts reqif.abstract
+puts reqif.sections
+----
+
+To generate a ReqIF XML document:
+
+[source,ruby]
+----
+require 'reqif'
+
+reqif = Reqif::ReqIf.new
+reqif.title = 'An Article Title'
+reqif.abstract = 'An Article Abstract'
+reqif.sections = [
+  Reqif::Section.new('Section 1', 'This is the first section'),
+  Reqif::Section.new('Section 2', 'This is the second section')
+]
+
+puts reqif.to_xml
+----
+
+
+== Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/lutaml/reqif.
+
+
+== Copyright and license
+
+The gem is available as open source under the terms of the BSD 2-clause license.
+
+All rights reserved. Ribose
+

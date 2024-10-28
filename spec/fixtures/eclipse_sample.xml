@@ -1,0 +1,51 @@
+<!-- # spec/fixtures/eclipse_sample.xml
+# From Eclipse RMF (Requirements Modeling Framework) Project
+# Source: https://git.eclipse.org/c/rmf/org.eclipse.rmf.git/tree/org.eclipse.rmf.reqif10.tests/src/org/eclipse/rmf/reqif10/tests/util/ -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<REQ-IF xmlns="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd" xmlns:configuration="http://eclipse.org/rmf/pror/toolextensions/1.0">
+  <THE-HEADER>
+    <REQ-IF-HEADER IDENTIFIER="_PAVlYPh-EeGh1_po1QnLGQ">
+      <COMMENT>Created by: jastram</COMMENT>
+      <CREATION-TIME>2012-06-29T18:01:47.156+0200</CREATION-TIME>
+      <REQ-IF-TOOL-ID>ProR (http://pror.org)</REQ-IF-TOOL-ID>
+      <REQ-IF-VERSION>1.0</REQ-IF-VERSION>
+      <SOURCE-TOOL-ID>ProR (http://pror.org)</SOURCE-TOOL-ID>
+      <TITLE>Requirements Document</TITLE>
+    </REQ-IF-HEADER>
+  </THE-HEADER>
+  <CORE-CONTENT>
+    <REQ-IF-CONTENT>
+      <DATATYPES>
+        <DATATYPE-DEFINITION-STRING IDENTIFIER="_PAVlYfh-EeGh1_po1QnLGQ" LAST-CHANGE="2012-06-29T18:01:47.156+0200" LONG-NAME="T_String32k">
+          <MAX-LENGTH>32000</MAX-LENGTH>
+        </DATATYPE-DEFINITION-STRING>
+      </DATATYPES>
+      <SPEC-TYPES>
+        <SPEC-OBJECT-TYPE IDENTIFIER="_PAVlYvh-EeGh1_po1QnLGQ" LAST-CHANGE="2012-06-29T18:01:47.156+0200" LONG-NAME="Requirement Type">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_PAVlY_h-EeGh1_po1QnLGQ" LAST-CHANGE="2012-06-29T18:01:47.156+0200" LONG-NAME="Description">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_PAVlYfh-EeGh1_po1QnLGQ</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+          </SPEC-ATTRIBUTES>
+        </SPEC-OBJECT-TYPE>
+      </SPEC-TYPES>
+      <SPEC-OBJECTS>
+        <SPEC-OBJECT IDENTIFIER="_PAVlZPh-EeGh1_po1QnLGQ" LAST-CHANGE="2012-06-29T18:01:47.156+0200">
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_PAVlYvh-EeGh1_po1QnLGQ</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The system shall provide user registration.">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_PAVlY_h-EeGh1_po1QnLGQ</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+        </SPEC-OBJECT>
+      </SPEC-OBJECTS>
+    </REQ-IF-CONTENT>
+  </CORE-CONTENT>
+</REQ-IF>
