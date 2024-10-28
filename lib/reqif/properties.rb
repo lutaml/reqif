@@ -6,7 +6,7 @@ module Reqif
 
     xml do
       root "PROPERTIES"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_element "EMBEDDED-VALUE", to: :embedded_value
     end

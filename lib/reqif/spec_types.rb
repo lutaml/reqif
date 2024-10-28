@@ -9,7 +9,7 @@ module Reqif
 
     xml do
       root "SPEC-TYPES"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_element "RELATION-GROUP-TYPE", to: :relation_group_type
       map_element "SPEC-OBJECT-TYPE", to: :spec_object_type

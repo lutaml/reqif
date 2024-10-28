@@ -11,8 +11,8 @@ module Reqif
     attribute :datatype_definition_xhtml, DatatypeDefinitionXhtml, collection: true
 
     xml do
-      root "DATATYPES"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      root "DATATYPES", ordered: true
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_element "DATATYPE-DEFINITION-BOOLEAN", to: :datatype_definition_boolean
       map_element "DATATYPE-DEFINITION-DATE", to: :datatype_definition_date

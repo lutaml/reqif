@@ -7,7 +7,7 @@ module Reqif
 
     xml do
       root "ATTRIBUTE-VALUE-STRING"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_attribute "THE-VALUE", to: :the_value
       map_element "DEFINITION", to: :definition

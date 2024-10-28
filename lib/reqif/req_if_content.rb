@@ -11,7 +11,7 @@ module Reqif
 
     xml do
       root "REQ-IF-CONTENT"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_element "DATATYPES", to: :datatypes
       map_element "SPEC-TYPES", to: :spec_types

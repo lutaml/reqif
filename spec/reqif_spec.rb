@@ -8,7 +8,8 @@ RSpec.describe Reqif do
   fixtures_dir = Pathname.new(__dir__).join("fixtures")
 
   describe "XML round-trip conversion" do
-    xml_files = Dir[fixtures_dir.join("**", "*.xml")]
+    xml_files = Dir[fixtures_dir.join("**", "*.xml")] +
+                Dir[fixtures_dir.join("**", "*.reqif")]
 
     # def check_parsed_content(parsed, reparsed)
     #   %i[
@@ -48,6 +49,8 @@ RSpec.describe Reqif do
           )
 
           cleaned_xml_string = xml_string
+          cleaned_xml_string = xml_string
+            .gsub(/^<\?xml.*\n/, "")
           # cleaned_xml_string = xml_string
           #   .gsub(/^<\?xml-model.*\n/, "")
           #   .gsub(/^<\?xml-stylesheet.*\n/, "")

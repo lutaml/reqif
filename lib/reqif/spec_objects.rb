@@ -6,7 +6,7 @@ module Reqif
 
     xml do
       root "SPEC-OBJECTS"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_element "SPEC-OBJECT", to: :spec_object
     end

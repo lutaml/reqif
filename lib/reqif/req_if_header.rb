@@ -16,7 +16,7 @@ module Reqif
 
     xml do
       root "REQ-IF-HEADER"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_attribute "IDENTIFIER", to: :identifier
       map_element "COMMENT", to: :comment

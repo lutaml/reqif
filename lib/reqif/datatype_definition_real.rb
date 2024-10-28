@@ -13,7 +13,7 @@ module Reqif
 
     xml do
       root "DATATYPE-DEFINITION-REAL"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_attribute "ACCURACY", to: :accuracy
       map_attribute "DESC", to: :desc

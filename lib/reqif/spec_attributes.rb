@@ -12,7 +12,7 @@ module Reqif
 
     xml do
       root "SPEC-ATTRIBUTES"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_element "ATTRIBUTE-DEFINITION-BOOLEAN", to: :attribute_definition_boolean
       map_element "ATTRIBUTE-DEFINITION-DATE", to: :attribute_definition_date

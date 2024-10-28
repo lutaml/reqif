@@ -12,7 +12,7 @@ module Reqif
 
     xml do
       root "EDITABLE-ATTS"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_element "ATTRIBUTE-DEFINITION-BOOLEAN-REF", to: :attribute_definition_boolean_ref
       map_element "ATTRIBUTE-DEFINITION-DATE-REF", to: :attribute_definition_date_ref

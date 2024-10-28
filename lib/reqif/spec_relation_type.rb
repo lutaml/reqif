@@ -11,7 +11,7 @@ module Reqif
 
     xml do
       root "SPEC-RELATION-TYPE"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_attribute "DESC", to: :desc
       map_attribute "IDENTIFIER", to: :identifier

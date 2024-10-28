@@ -9,7 +9,7 @@ module Reqif
 
     xml do
       root "ATTRIBUTE-VALUE-XHTML"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_attribute "IS-SIMPLIFIED", to: :is_simplified
       map_element "THE-VALUE", to: :the_value

@@ -12,7 +12,7 @@ module Reqif
 
     xml do
       root "DEFINITION"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       # TODO: Only one of these values can be active at the same time
       map_element "ATTRIBUTE-DEFINITION-BOOLEAN-REF", to: :attribute_definition_boolean_ref

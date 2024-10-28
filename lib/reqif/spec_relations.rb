@@ -7,7 +7,7 @@ module Reqif
 
     xml do
       root "SPEC-RELATIONS"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       # TODO: Only one of these values can be active at the same time
       map_element "SPEC-RELATION", to: :spec_relation

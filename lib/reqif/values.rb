@@ -14,7 +14,7 @@ module Reqif
     # TODO: if ENUM-VALUE-REF is present, all others cannot be present.
     xml do
       root "VALUES"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_element "ATTRIBUTE-VALUE-BOOLEAN", to: :attribute_value_boolean
       map_element "ATTRIBUTE-VALUE-DATE", to: :attribute_value_date

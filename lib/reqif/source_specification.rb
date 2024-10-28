@@ -6,7 +6,7 @@ module Reqif
 
     xml do
       root "SOURCE-SPECIFICATION"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", "REQIF"
+      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
 
       map_element "SPECIFICATION-REF", to: :specification_ref
     end
