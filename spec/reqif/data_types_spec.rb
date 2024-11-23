@@ -1,4 +1,3 @@
-# spec/reqif/data_types_spec.rb
 RSpec.describe Reqif::Datatypes do
   let(:datatypes_xml) do
     <<~XML

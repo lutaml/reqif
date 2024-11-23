@@ -1,4 +1,3 @@
-# spec/reqif/req_if_header_spec.rb
 RSpec.describe Reqif::ReqIfHeader do
   let(:header_xml) do
     <<~XML
@@ -19,7 +18,7 @@ RSpec.describe Reqif::ReqIfHeader do
   describe "attributes" do
     it "parses all header attributes" do
       expect(header.comment).to eq("Example ReqIF file")
-      expect(header.creation_time).to be_a(Time)
+      expect(header.creation_time).to be_a(DateTime)
       expect(header.creation_time.utc.iso8601).to eq("2023-10-26T12:00:00Z")
       expect(header.identifier).to eq("_1234567890")
       expect(header.req_if_tool_id).to eq("reqif-tool")

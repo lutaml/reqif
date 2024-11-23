@@ -6,7 +6,7 @@ module Reqif
     attribute :identifier, :string
     attribute :is_editable, :boolean
     attribute :is_table_internal, :boolean
-    attribute :last_change, :time
+    attribute :last_change, HighPrecisionDateTime
     attribute :long_name, :string
     attribute :alternative_id, AlternativeId
     attribute :children, Children

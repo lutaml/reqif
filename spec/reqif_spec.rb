@@ -48,7 +48,7 @@ RSpec.describe Reqif do
             encoding: "utf-8",
           )
 
-          cleaned_xml_string = xml_string
+          # cleaned_xml_string = xml_string
           cleaned_xml_string = xml_string
             .gsub(/^<\?xml.*\n/, "")
           # cleaned_xml_string = xml_string

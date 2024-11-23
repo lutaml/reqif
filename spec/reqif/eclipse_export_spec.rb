@@ -1,4 +1,3 @@
-# spec/reqif/eclipse_export_spec.rb
 RSpec.describe "Eclipse RMF Export" do
   let(:xml_file) { File.read("spec/fixtures/eclipse_sample.xml") }
   let(:reqif) { Reqif::ReqIf.from_xml(xml_file) }

@@ -1,8 +1,52 @@
 = ReqIF Ruby library
 
+== Purpose
+
 The `reqif` library is a parser and generator for ReqIF XML documents.
 
-It is intended to be used to parse and generate ReqIF XML v1.2 documents.
+http://www.omg.org/spec/ReqIF/[ReqIF (Requirements Interchange Format)] is an
+OMG (Object Management Group) standard for the exchange of requirements between
+different tools. It is designed to facilitate the transfer of requirements
+information, ensuring that data can be shared and understood across various
+platforms and organizations. ReqIF provides a standardized XML format for
+requirements, making it easier to manage and collaborate on requirements
+throughout the development lifecycle.
+
+This library is intended to be used to parse and generate ReqIF XML v1.2
+documents.
+
+
+== A brief history of ReqIF
+
+In 2004, the HIS (Hersteller Initiative Software), a panel of Germany's
+automotive manufacturers (Daimler, VW, Porsche, Audi and BMW Group) developed
+the idea of creating the "Requirements Interchange Format".
+
+In 2005, the first
+version of that format was presented at the REConf, a conference about
+requirements engineering and management, in Munich. In 2008, the HIS Steering
+Committee decided that the internationalization and maintenance of the
+Requirements Interchange Format should be proceeded with the ProSTEP iViP
+Association.
+
+A project was set up and a team was built that includes members of
+the ProSTEP iViP Association, representatives of manufacturing companies (Audi,
+BMW Group, Daimler, VW, Bosch and Continental), tool vendors (Atego, IBM, MKS)
+and development partners (HOOD GmbH, PROSTEP AG).
+
+The HIS released the Requirements Interchange Format as RIF 1.0, RIF 1.0a, RIF
+1.1; RIF 1.1a and the ProSTEP iViP released the recommendation RIF 1.2.
+
+OMG ReqIF 1.0 is the direct successor of the ProSTEP iViP recommendation RIF
+1.2.
+
+The latest version of OMG ReqIF is 1.2.
+
+== Formats
+
+ReqIF file extensions are `.xml`, `.reqif` and `.reqifz` (compressed).
+
+
 
 == Installation
 
@@ -58,6 +102,22 @@ reqif.sections = [
 
 puts reqif.to_xml
 ----
+
+== Tests
+
+Round-trip tests are all under `spec/fixtures`.
+
+These tests originate from various locations:
+
+`antcc_*`:: https://git.ebersold.fr/?p=antcc.git;a=summary
+`doors_*`:: https://jazz.net/wiki/bin/view/Main/DNGReqIF
+`eclipse_capella_*.xml`:: https://github.com/eclipse-capella/capella-requirements-vp/
+`eclipse_rmf_*.reqif`:: https://eclipse.googlesource.com/rmf/
+`ec`
+
+`ea_*`:: https://github.com/redsteve/EnterpriseArchitect_ReqIF_AddIn
+`polarion_*`:: https://almdemo.polarion.com/polarion/import/reqif
+`strictdoc-*.reqif`:: https://github.com/strictdoc-project/reqif/
 
 
 == Contributing

@@ -4,7 +4,7 @@ module Reqif
   class DatatypeDefinitionInteger < Lutaml::Model::Serializable
     attribute :desc, :string
     attribute :identifier, :string
-    attribute :last_change, :time
+    attribute :last_change, HighPrecisionDateTime
     attribute :long_name, :string
     attribute :max, :integer
     attribute :min, :integer

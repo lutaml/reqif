@@ -5,7 +5,7 @@ module Reqif
     attribute :accuracy, :integer
     attribute :desc, :string
     attribute :identifier, :string
-    attribute :last_change, :time
+    attribute :last_change, HighPrecisionDateTime
     attribute :long_name, :string
     attribute :max, :float
     attribute :min, :float
