@@ -1,7 +1,7 @@
 require "spec_helper"
 
 RSpec.describe Reqif::ReqIf do
-  let(:xml_string) { File.read("spec/fixtures/sample_reqif.xml") }
+  let(:xml_string) { File.read("spec/fixtures/strictdoc_01_minimal_reqif_sample.reqif") }
   let(:parsed) { described_class.from_xml(xml_string) }
 
   describe ".from_xml" do
