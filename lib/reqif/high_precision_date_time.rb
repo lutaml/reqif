@@ -5,7 +5,6 @@ module Reqif
 
     # The format looks like this `2012-04-07T01:51:37.112+02:00`
     def self.from_xml(xml_string)
-      puts "HEREEEEEE"
       ::DateTime.parse(xml_string)
     end
 
