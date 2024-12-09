@@ -2,15 +2,18 @@ require "lutaml/model/type/date_time"
 
 module Reqif
   class HighPrecisionDateTime < Lutaml::Model::Type::DateTime
+    def self.serialize(value)
+      return nil if value.nil?
 
-    # The format looks like this `2012-04-07T01:51:37.112+02:00`
-    def self.from_xml(xml_string)
-      ::DateTime.parse(xml_string)
+      cast(value)&.iso8601(8)
     end
 
-    # The %L adds milliseconds to the time
+    def to_json
+      value.to_time.iso8601(8)
+    end
+
     def to_xml
-      value.strftime("%Y-%m-%dT%H:%M:%S.%L99999%:z")
+      value.to_time.iso8601(8)
     end
   end
 end
