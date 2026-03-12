@@ -3,13 +3,13 @@ RSpec.describe Reqif::SpecTypes do
     <<~XML
       <SPEC-TYPES>
         <SPEC-OBJECT-TYPE IDENTIFIER="st1" LAST-CHANGE="2023-10-26T12:00:00Z" LONG-NAME="Requirement Type">
-          <ATTRIBUTE-DEFINITIONS>
+          <SPEC-ATTRIBUTES>
             <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="ad1" LAST-CHANGE="2023-10-26T12:00:00Z" LONG-NAME="Description">
               <TYPE-REF>dt1</TYPE-REF>
               <DEFAULT-VALUE>No description provided</DEFAULT-VALUE>
               <MULTI-VALUED>false</MULTI-VALUED>
             </ATTRIBUTE-DEFINITION-STRING>
-          </ATTRIBUTE-DEFINITIONS>
+          </SPEC-ATTRIBUTES>
         </SPEC-OBJECT-TYPE>
       </SPEC-TYPES>
     XML
