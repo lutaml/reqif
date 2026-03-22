@@ -34,7 +34,7 @@ RSpec.describe Reqif::ReqIf do
       # puts "------"
       # puts generated
 
-      expect(generated).to be_analogous_with(xml_string)
+      expect(generated).to be_xml_equivalent_to(xml_string)
     end
   end
 end

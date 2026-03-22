@@ -2,21 +2,21 @@ require "lutaml/model"
 
 module Reqif
   class Type < Lutaml::Model::Serializable
-    attribute :datatype_definition_boolean_ref, :string
-    attribute :specification_type_ref, :string
-    attribute :relation_group_type_ref, :string
-    attribute :datatype_definition_date_ref, :string
-    attribute :datatype_definition_enumeration_ref, :string
-    attribute :datatype_definition_integer_ref, :string
-    attribute :datatype_definition_real_ref, :string
-    attribute :datatype_definition_string_ref, :string
-    attribute :datatype_definition_xhtml_ref, :string
-    attribute :spec_object_type_ref, :string
-    attribute :spec_relation_type_ref, :string
+    attribute :datatype_definition_boolean_ref, StringType
+    attribute :specification_type_ref, StringType
+    attribute :relation_group_type_ref, StringType
+    attribute :datatype_definition_date_ref, StringType
+    attribute :datatype_definition_enumeration_ref, StringType
+    attribute :datatype_definition_integer_ref, StringType
+    attribute :datatype_definition_real_ref, StringType
+    attribute :datatype_definition_string_ref, StringType
+    attribute :datatype_definition_xhtml_ref, StringType
+    attribute :spec_object_type_ref, StringType
+    attribute :spec_relation_type_ref, StringType
 
     xml do
-      root "TYPE"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "TYPE"
+      namespace Namespace
 
       # TODO: Only one of these values can be active at the same time
       map_element "DATATYPE-DEFINITION-BOOLEAN-REF", to: :datatype_definition_boolean_ref

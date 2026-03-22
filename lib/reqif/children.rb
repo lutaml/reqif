@@ -5,8 +5,9 @@ module Reqif
     attribute :spec_hierarchy, SpecHierarchy, collection: true
 
     xml do
-      root "CHILDREN"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "CHILDREN"
+      namespace Namespace
+      ordered
 
       map_element "SPEC-HIERARCHY", to: :spec_hierarchy
     end

@@ -12,8 +12,9 @@ module Reqif
     attribute :type, Type
 
     xml do
-      root "ATTRIBUTE-DEFINITION-DATE"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "ATTRIBUTE-DEFINITION-DATE"
+      namespace Namespace
+      ordered
 
       map_attribute "DESC", to: :desc
       map_attribute "IDENTIFIER", to: :identifier

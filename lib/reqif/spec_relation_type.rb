@@ -10,8 +10,8 @@ module Reqif
     attribute :spec_attributes, SpecAttributes
 
     xml do
-      root "SPEC-RELATION-TYPE"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "SPEC-RELATION-TYPE"
+      namespace Namespace
 
       map_attribute "DESC", to: :desc
       map_attribute "IDENTIFIER", to: :identifier

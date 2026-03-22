@@ -2,21 +2,75 @@
 
 require "lutaml/model"
 
-Lutaml::Model::Config.configure do |config|
-  require "lutaml/model/xml_adapter/nokogiri_adapter"
-  config.xml_adapter = Lutaml::Model::XmlAdapter::NokogiriAdapter
-end
-
 module Reqif
   class Error < StandardError; end
 
-  # Your code goes here...
+  autoload :AlternativeId, "reqif/alternative_id.rb"
+  autoload :AttributeDefinitionBoolean, "reqif/attribute_definition_boolean.rb"
+  autoload :AttributeDefinitionDate, "reqif/attribute_definition_date.rb"
+  autoload :AttributeDefinitionEnumeration, "reqif/attribute_definition_enumeration.rb"
+  autoload :AttributeDefinitionInteger, "reqif/attribute_definition_integer.rb"
+  autoload :AttributeDefinitionReal, "reqif/attribute_definition_real.rb"
+  autoload :AttributeDefinitionString, "reqif/attribute_definition_string.rb"
+  autoload :AttributeDefinitionXhtml, "reqif/attribute_definition_xhtml.rb"
+  autoload :AttributeValueBoolean, "reqif/attribute_value_boolean.rb"
+  autoload :AttributeValueDate, "reqif/attribute_value_date.rb"
+  autoload :AttributeValueEnumeration, "reqif/attribute_value_enumeration.rb"
+  autoload :AttributeValueInteger, "reqif/attribute_value_integer.rb"
+  autoload :AttributeValueReal, "reqif/attribute_value_real.rb"
+  autoload :AttributeValueString, "reqif/attribute_value_string.rb"
+  autoload :AttributeValueXhtml, "reqif/attribute_value_xhtml.rb"
+  autoload :Children, "reqif/children.rb"
+  autoload :CoreContent, "reqif/core_content.rb"
+  autoload :DatatypeDefinitionBoolean, "reqif/datatype_definition_boolean.rb"
+  autoload :DatatypeDefinitionDate, "reqif/datatype_definition_date.rb"
+  autoload :DatatypeDefinitionEnumeration, "reqif/datatype_definition_enumeration.rb"
+  autoload :DatatypeDefinitionInteger, "reqif/datatype_definition_integer.rb"
+  autoload :DatatypeDefinitionReal, "reqif/datatype_definition_real.rb"
+  autoload :DatatypeDefinitionString, "reqif/datatype_definition_string.rb"
+  autoload :DatatypeDefinitionXhtml, "reqif/datatype_definition_xhtml.rb"
+  autoload :Datatypes, "reqif/datatypes.rb"
+  autoload :DefaultValue, "reqif/default_value.rb"
+  autoload :Definition, "reqif/definition.rb"
+  autoload :Doors, "reqif/doors.rb"
+  autoload :EditableAtts, "reqif/editable_atts.rb"
+  autoload :EmbeddedValue, "reqif/embedded_value.rb"
+  autoload :EnumValue, "reqif/enum_value.rb"
+  autoload :HighPrecisionDateTime, "reqif/high_precision_date_time.rb"
+  autoload :Namespace, "reqif/namespace.rb"
+  autoload :Object, "reqif/object.rb"
+  autoload :Properties, "reqif/properties.rb"
+  autoload :RelationGroup, "reqif/relation_group.rb"
+  autoload :RelationGroupType, "reqif/relation_group_type.rb"
+  autoload :ReqIf, "reqif/req_if.rb"
+  autoload :ReqIfContent, "reqif/req_if_content.rb"
+  autoload :ReqIfHeader, "reqif/req_if_header.rb"
+  autoload :ReqIfToolExtension, "reqif/req_if_tool_extension.rb"
+  autoload :ReqifFloat, "reqif/reqif_float.rb"
+  autoload :ReqifInteger, "reqif/reqif_integer.rb"
+  autoload :Source, "reqif/source.rb"
+  autoload :SourceSpecification, "reqif/source_specification.rb"
+  autoload :SpecAttributes, "reqif/spec_attributes.rb"
+  autoload :SpecHierarchy, "reqif/spec_hierarchy.rb"
+  autoload :SpecObject, "reqif/spec_object.rb"
+  autoload :SpecObjectType, "reqif/spec_object_type.rb"
+  autoload :SpecObjects, "reqif/spec_objects.rb"
+  autoload :SpecRelation, "reqif/spec_relation.rb"
+  autoload :SpecRelationGroups, "reqif/spec_relation_groups.rb"
+  autoload :SpecRelationType, "reqif/spec_relation_type.rb"
+  autoload :SpecRelations, "reqif/spec_relations.rb"
+  autoload :SpecTypes, "reqif/spec_types.rb"
+  autoload :Specification, "reqif/specification.rb"
+  autoload :SpecificationType, "reqif/specification_type.rb"
+  autoload :Specifications, "reqif/specifications.rb"
+  autoload :SpecifiedValues, "reqif/specified_values.rb"
+  autoload :StringType, "reqif/string_type.rb"
+  autoload :Target, "reqif/target.rb"
+  autoload :TargetSpecification, "reqif/target_specification.rb"
+  autoload :TheHeader, "reqif/the_header.rb"
+  autoload :ToolExtensions, "reqif/tool_extensions.rb"
+  autoload :Type, "reqif/type.rb"
+  autoload :Values, "reqif/values.rb"
+  autoload :Xhtml, "reqif/xhtml.rb"
+  autoload :XhtmlContent, "reqif/xhtml_content.rb"
 end
-
-require "zeitwerk"
-
-loader = Zeitwerk::Loader.for_gem
-loader.push_dir(__dir__) #, namespace: Reqif)
-loader.ignore("#{__dir__}/reqif.rb")
-loader.setup
-loader.eager_load

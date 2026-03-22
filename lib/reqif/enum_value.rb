@@ -10,8 +10,8 @@ module Reqif
     attribute :properties, Properties
 
     xml do
-      root "ENUM-VALUE"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "ENUM-VALUE"
+      namespace Namespace
 
       map_attribute "DESC", to: :desc
       map_attribute "IDENTIFIER", to: :identifier

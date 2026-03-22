@@ -11,8 +11,9 @@ module Reqif
     attribute :attribute_definition_xhtml, AttributeDefinitionXhtml, collection: true
 
     xml do
-      root "SPEC-ATTRIBUTES"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "SPEC-ATTRIBUTES"
+      namespace Namespace
+      ordered
 
       map_element "ATTRIBUTE-DEFINITION-BOOLEAN", to: :attribute_definition_boolean
       map_element "ATTRIBUTE-DEFINITION-DATE", to: :attribute_definition_date

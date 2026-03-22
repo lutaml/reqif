@@ -10,8 +10,9 @@ module Reqif
     attribute :spec_attributes, SpecAttributes
 
     xml do
-      root "SPECIFICATION-TYPE"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "SPECIFICATION-TYPE"
+      namespace Namespace
+      ordered
 
       map_attribute "DESC", to: :desc
       map_attribute "IDENTIFIER", to: :identifier

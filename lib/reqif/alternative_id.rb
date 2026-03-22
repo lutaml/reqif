@@ -5,8 +5,8 @@ module Reqif
     attribute :identifier, :string
 
     xml do
-      root "ALTERNATIVE-ID"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "ALTERNATIVE-ID"
+      namespace Namespace
 
       map_attribute "IDENTIFIER", to: :identifier
     end

@@ -5,8 +5,9 @@ module Reqif
     attribute :specification, Specification, collection: true
 
     xml do
-      root "SPECIFICATIONS"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "SPECIFICATIONS"
+      namespace Namespace
+      ordered
 
       map_element "SPECIFICATION", to: :specification
     end

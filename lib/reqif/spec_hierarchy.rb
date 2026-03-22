@@ -14,8 +14,9 @@ module Reqif
     attribute :object, Object
 
     xml do
-      root "SPEC-HIERARCHY"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "SPEC-HIERARCHY"
+      namespace Namespace
+      ordered
 
       map_attribute "DESC", to: :desc
       map_attribute "IDENTIFIER", to: :identifier

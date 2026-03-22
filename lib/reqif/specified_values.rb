@@ -5,8 +5,8 @@ module Reqif
     attribute :enum_value, EnumValue, collection: true
 
     xml do
-      root "SPECIFIED-VALUES"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "SPECIFIED-VALUES"
+      namespace Namespace
 
       map_element "ENUM-VALUE", to: :enum_value
     end

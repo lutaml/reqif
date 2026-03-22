@@ -13,8 +13,8 @@ module Reqif
     attribute :type, Type
 
     xml do
-      root "RELATION-GROUP"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "RELATION-GROUP"
+      namespace Namespace
 
       map_attribute "DESC", to: :desc
       map_attribute "IDENTIFIER", to: :identifier

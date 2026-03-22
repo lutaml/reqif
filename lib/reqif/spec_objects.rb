@@ -5,8 +5,9 @@ module Reqif
     attribute :spec_object, SpecObject, collection: true
 
     xml do
-      root "SPEC-OBJECTS"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "SPEC-OBJECTS"
+      namespace Namespace
+      ordered
 
       map_element "SPEC-OBJECT", to: :spec_object
     end
