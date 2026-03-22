@@ -11,8 +11,8 @@ module Reqif
     attribute :attribute_value_xhtml, AttributeValueXhtml
 
     xml do
-      root "DEFAULT-VALUE"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "DEFAULT-VALUE"
+      namespace Namespace
 
       # TODO: Only one of these values can be active at the same time
       map_element "ATTRIBUTE-VALUE-BOOLEAN", to: :attribute_value_boolean

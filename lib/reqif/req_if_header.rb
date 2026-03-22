@@ -10,8 +10,9 @@ module Reqif
     attribute :title, :string
 
     xml do
-      root "REQ-IF-HEADER", ordered: true
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "REQ-IF-HEADER"
+      namespace Namespace
+      ordered
 
       map_attribute "IDENTIFIER", to: :identifier
       map_element "COMMENT", to: :comment

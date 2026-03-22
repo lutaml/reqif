@@ -9,8 +9,8 @@ module Reqif
     attribute :alternative_id, AlternativeId
 
     xml do
-      root "DATATYPE-DEFINITION-BOOLEAN"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "DATATYPE-DEFINITION-BOOLEAN"
+      namespace Namespace
 
       map_attribute "DESC", to: :desc
       map_attribute "IDENTIFIER", to: :identifier

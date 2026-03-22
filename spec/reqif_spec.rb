@@ -60,7 +60,7 @@ RSpec.describe Reqif do
           # puts "------"
           # puts generated
 
-          expect(generated).to be_analogous_with(cleaned_xml_string)
+          expect(generated).to be_xml_equivalent_to(cleaned_xml_string)
         end
       end
     end

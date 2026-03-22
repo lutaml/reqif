@@ -6,8 +6,9 @@ module Reqif
     attribute :definition, Definition
 
     xml do
-      root "ATTRIBUTE-VALUE-BOOLEAN"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "ATTRIBUTE-VALUE-BOOLEAN"
+      namespace Namespace
+      ordered
 
       map_attribute "THE-VALUE", to: :the_value
       map_element "DEFINITION", to: :definition

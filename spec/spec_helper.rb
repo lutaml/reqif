@@ -2,7 +2,16 @@
 
 require "reqif"
 require "nokogiri"
-require "xml-c14n"
+require "canon/rspec_matchers"
+
+# Configure Canon to ignore XML comments (lutaml-model doesn't preserve them)
+# and structural whitespace (input/output formatting may differ)
+Canon::Config.configure do |config|
+  config.xml.match.options = {
+    comments: :ignore,
+    structural_whitespace: :ignore,
+  }
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -16,13 +25,6 @@ RSpec.configure do |config|
   end
 end
 
-require "lutaml/model"
-require "lutaml/model/xml_adapter/nokogiri_adapter"
-require "lutaml/model/json_adapter/standard_json_adapter"
-require "lutaml/model/yaml_adapter/standard_yaml_adapter"
-
 Lutaml::Model::Config.configure do |config|
-  config.xml_adapter = Lutaml::Model::XmlAdapter::NokogiriAdapter
-  config.json_adapter = Lutaml::Model::JsonAdapter::StandardJsonAdapter
-  config.yaml_adapter = Lutaml::Model::YamlAdapter::StandardYamlAdapter
+  config.xml_adapter_type = :nokogiri
 end

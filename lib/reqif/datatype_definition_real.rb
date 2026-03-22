@@ -7,13 +7,13 @@ module Reqif
     attribute :identifier, :string
     attribute :last_change, HighPrecisionDateTime
     attribute :long_name, :string
-    attribute :max, :float
-    attribute :min, :float
+    attribute :max, ReqifFloat
+    attribute :min, ReqifFloat
     attribute :alternative_id, AlternativeId
 
     xml do
-      root "DATATYPE-DEFINITION-REAL"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "DATATYPE-DEFINITION-REAL"
+      namespace Namespace
 
       map_attribute "ACCURACY", to: :accuracy
       map_attribute "DESC", to: :desc

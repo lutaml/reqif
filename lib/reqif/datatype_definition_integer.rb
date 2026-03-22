@@ -6,13 +6,13 @@ module Reqif
     attribute :identifier, :string
     attribute :last_change, HighPrecisionDateTime
     attribute :long_name, :string
-    attribute :max, :integer
-    attribute :min, :integer
+    attribute :max, ReqifInteger
+    attribute :min, ReqifInteger
     attribute :alternative_id, AlternativeId
 
     xml do
-      root "DATATYPE-DEFINITION-INTEGER"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "DATATYPE-DEFINITION-INTEGER"
+      namespace Namespace
 
       map_attribute "DESC", to: :desc
       map_attribute "IDENTIFIER", to: :identifier

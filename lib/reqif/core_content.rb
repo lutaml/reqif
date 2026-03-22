@@ -5,8 +5,9 @@ module Reqif
     attribute :req_if_content, ReqIfContent
 
     xml do
-      root "CORE-CONTENT"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "CORE-CONTENT"
+      namespace Namespace
+      ordered
 
       map_element "REQ-IF-CONTENT", to: :req_if_content
     end

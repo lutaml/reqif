@@ -10,8 +10,8 @@ module Reqif
     attribute :specified_values, SpecifiedValues
 
     xml do
-      root "DATATYPE-DEFINITION-ENUMERATION"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "DATATYPE-DEFINITION-ENUMERATION"
+      namespace Namespace
 
       map_attribute "DESC", to: :desc
       map_attribute "IDENTIFIER", to: :identifier

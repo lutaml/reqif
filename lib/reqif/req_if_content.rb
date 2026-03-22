@@ -10,8 +10,8 @@ module Reqif
     attribute :spec_relation_groups, SpecRelationGroups
 
     xml do
-      root "REQ-IF-CONTENT"
-      namespace "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"
+      element "REQ-IF-CONTENT"
+      namespace Namespace
 
       map_element "DATATYPES", to: :datatypes
       map_element "SPEC-TYPES", to: :spec_types
