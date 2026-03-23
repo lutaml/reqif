@@ -12,6 +12,7 @@ module Reqif
     xml do
       element "SPEC-OBJECT-TYPE"
       namespace Namespace
+      ordered
 
       map_attribute "DESC", to: :desc
       map_attribute "IDENTIFIER", to: :identifier

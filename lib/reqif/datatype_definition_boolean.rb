@@ -11,6 +11,7 @@ module Reqif
     xml do
       element "DATATYPE-DEFINITION-BOOLEAN"
       namespace Namespace
+      ordered
 
       map_attribute "DESC", to: :desc
       map_attribute "IDENTIFIER", to: :identifier

@@ -11,6 +11,7 @@ module Reqif
       element "REQ-IF"
       namespace Namespace
       namespace_scope [Xhtml::Namespace]
+      ordered
 
       map_attribute "lang", to: :lang
       map_element "THE-HEADER", to: :the_header
