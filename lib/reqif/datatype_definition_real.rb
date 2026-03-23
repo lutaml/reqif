@@ -14,6 +14,7 @@ module Reqif
     xml do
       element "DATATYPE-DEFINITION-REAL"
       namespace Namespace
+      ordered
 
       map_attribute "ACCURACY", to: :accuracy
       map_attribute "DESC", to: :desc

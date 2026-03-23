@@ -17,6 +17,7 @@ module Reqif
     xml do
       element "TYPE"
       namespace Namespace
+      ordered
 
       # TODO: Only one of these values can be active at the same time
       map_element "DATATYPE-DEFINITION-BOOLEAN-REF", to: :datatype_definition_boolean_ref

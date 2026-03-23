@@ -15,6 +15,7 @@ module Reqif
     xml do
       element "RELATION-GROUP"
       namespace Namespace
+      ordered
 
       map_attribute "DESC", to: :desc
       map_attribute "IDENTIFIER", to: :identifier

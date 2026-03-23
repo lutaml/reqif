@@ -2,17 +2,18 @@ require "lutaml/model"
 
 module Reqif
   class Definition < Lutaml::Model::Serializable
-    attribute :attribute_definition_boolean_ref, StringType
-    attribute :attribute_definition_date_ref, StringType
-    attribute :attribute_definition_enumeration_ref, StringType
-    attribute :attribute_definition_integer_ref, StringType
-    attribute :attribute_definition_real_ref, StringType
-    attribute :attribute_definition_string_ref, StringType
-    attribute :attribute_definition_xhtml_ref, StringType
+    attribute :attribute_definition_boolean_ref, ::Reqif::StringType
+    attribute :attribute_definition_date_ref, ::Reqif::StringType
+    attribute :attribute_definition_enumeration_ref, ::Reqif::StringType
+    attribute :attribute_definition_integer_ref, ::Reqif::StringType
+    attribute :attribute_definition_real_ref, ::Reqif::StringType
+    attribute :attribute_definition_string_ref, ::Reqif::StringType
+    attribute :attribute_definition_xhtml_ref, ::Reqif::StringType
 
     xml do
       element "DEFINITION"
       namespace Namespace
+      ordered
 
       # TODO: Only one of these values can be active at the same time
       map_element "ATTRIBUTE-DEFINITION-BOOLEAN-REF", to: :attribute_definition_boolean_ref

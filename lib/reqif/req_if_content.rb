@@ -12,6 +12,7 @@ module Reqif
     xml do
       element "REQ-IF-CONTENT"
       namespace Namespace
+      ordered
 
       map_element "DATATYPES", to: :datatypes
       map_element "SPEC-TYPES", to: :spec_types

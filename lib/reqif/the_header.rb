@@ -7,6 +7,7 @@ module Reqif
     xml do
       element "THE-HEADER"
       namespace Namespace
+      ordered
 
       map_element "REQ-IF-HEADER", to: :req_if_header
     end
