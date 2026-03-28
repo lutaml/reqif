@@ -1,19 +1,22 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 RSpec.describe Reqif::ReqIf do
-  let(:xml_string) { File.read("spec/fixtures/strictdoc_01_minimal_reqif_sample.reqif") }
+  let(:xml_string) { File.read("spec/fixtures/eclipse_rmf_sample.reqif") }
   let(:parsed) { described_class.from_xml(xml_string) }
 
   describe ".from_xml" do
     it "parses ReqIF XML correctly" do
       expect(parsed).to be_a(described_class)
-      expect(parsed.the_header).to be_a(Reqif::ReqIfHeader)
-      expect(parsed.req_if_content).to be_a(Reqif::ReqIfContent)
+      expect(parsed.the_header.req_if_header).to be_a(Reqif::ReqIfHeader)
+      expect(parsed.core_content.req_if_content).to be_a(Reqif::ReqIfContent)
     end
 
     it "maintains XML namespaces" do
       generated = parsed.to_xml
-      expect(generated).to include('xmlns="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd"')
+      # Eclipse RMF fixtures use 20101201 namespace which should be preserved
+      expect(generated).to include('xmlns="http://www.omg.org/spec/ReqIF/20101201"')
     end
   end
 
@@ -22,7 +25,7 @@ RSpec.describe Reqif::ReqIf do
       generated = parsed.to_xml(
         pretty: true,
         declaration: true,
-        encoding: "utf-8",
+        encoding: "utf-8"
       )
 
       # cleaned_xml_string = xml_string

@@ -1,11 +1,15 @@
+# frozen_string_literal: true
+
 RSpec.describe Reqif::Specifications do
   let(:specifications_xml) do
     <<~XML
-      <SPECIFICATIONS>
+      <SPECIFICATIONS xmlns="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd">
         <SPECIFICATION IDENTIFIER="spec1" LAST-CHANGE="2023-10-26T12:00:00Z" LONG-NAME="System Requirements">
           <CHILDREN>
             <SPEC-HIERARCHY IDENTIFIER="sh1" LAST-CHANGE="2023-10-26T12:00:00Z">
-              <OBJECT-REF>so1</OBJECT-REF>
+              <OBJECT>
+                <SPEC-OBJECT-REF>so1</SPEC-OBJECT-REF>
+              </OBJECT>
             </SPEC-HIERARCHY>
           </CHILDREN>
         </SPECIFICATION>
@@ -23,9 +27,9 @@ RSpec.describe Reqif::Specifications do
     end
 
     it "parses spec hierarchy" do
-      hierarchy = specifications.specification.first.children.first
+      hierarchy = specifications.specification.first.children.spec_hierarchy.first
       expect(hierarchy.identifier).to eq("sh1")
-      expect(hierarchy.object_ref).to eq("so1")
+      expect(hierarchy.object.spec_object_ref).to eq("so1")
     end
   end
 end

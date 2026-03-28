@@ -17,7 +17,7 @@ module Reqif
       ordered
 
       map_attribute "ACCURACY", to: :accuracy
-      map_attribute "DESC", to: :desc
+      map_attribute "DESC", to: :desc, render_empty: true
       map_attribute "IDENTIFIER", to: :identifier
       map_attribute "LAST-CHANGE", to: :last_change
       map_attribute "LONG-NAME", to: :long_name

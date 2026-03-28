@@ -2,7 +2,7 @@ require "lutaml/model"
 
 module Reqif
   class AttributeValueDate < Lutaml::Model::Serializable
-    attribute :the_value, :date_time
+    attribute :the_value, HighPrecisionDateTime
     attribute :definition, Definition
 
     xml do

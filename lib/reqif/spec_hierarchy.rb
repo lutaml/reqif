@@ -18,7 +18,7 @@ module Reqif
       namespace Namespace
       ordered
 
-      map_attribute "DESC", to: :desc
+      map_attribute "DESC", to: :desc, render_empty: true
       map_attribute "IDENTIFIER", to: :identifier
       map_attribute "IS-EDITABLE", to: :is_editable
       map_attribute "IS-TABLE-INTERNAL", to: :is_table_internal

@@ -4,18 +4,50 @@ require "bigdecimal"
 require "lutaml/model/type/float"
 
 module Reqif
-  # Custom Float type that serializes scientific notation with uppercase E
-  # in ReqIF format (mantissa in [1, 10), no + sign on positive exponents).
+  # Custom Float type that handles ReqIF float serialization.
+  # Preserves decimal notation for simple values and uses scientific
+  # notation only when necessary (very large/small numbers).
   class ReqifFloat < Lutaml::Model::Type::Float
-    # Format a float value in ReqIF scientific notation.
-    # Uses %.15e (15 significant figures) and cleans up formatting:
-    # - Uppercase E for exponent
-    # - No + sign on positive exponents
-    # - No trailing zeros in mantissa or leading zeros in exponent
+    # Format a float value for ReqIF.
+    # Uses decimal notation for values that can be represented cleanly,
+    # otherwise uses scientific notation with uppercase E.
     #
     # @param f [Float] The float value
-    # @return [String] ReqIF formatted string (e.g. "3.4028235E38")
+    # @return [String] ReqIF formatted string
     def self.reqif_format(float_value)
+      # Try to represent as a clean decimal first
+      decimal_str = format_float_as_decimal(float_value)
+      return decimal_str if decimal_str
+
+      # Fall back to scientific notation
+      format_scientific(float_value)
+    end
+
+    # Format as decimal if it can be done cleanly
+    def self.format_float_as_decimal(float_value)
+      # Use a reasonable precision to avoid floating point artifacts
+      # Check if the value can be represented cleanly in decimal
+      decimal_str = format("%.10g", float_value)
+
+      # Skip if it's in scientific notation (contains 'e' or 'E')
+      return nil if decimal_str.include?("e") || decimal_str.include?("E")
+
+      # Verify round-trip: parse back and check if we get the same value
+      parsed = BigDecimal(decimal_str).to_f
+      return decimal_str if parsed == float_value
+
+      # Try with higher precision
+      decimal_str = format("%.15g", float_value)
+      return nil if decimal_str.include?("e") || decimal_str.include?("E")
+
+      parsed = BigDecimal(decimal_str).to_f
+      return decimal_str if parsed == float_value
+
+      nil # Couldn't represent cleanly
+    end
+
+    # Format in scientific notation
+    def self.format_scientific(float_value)
       formatted = format("%.15e", float_value).upcase
       mantissa, exp = formatted.split("E")
 

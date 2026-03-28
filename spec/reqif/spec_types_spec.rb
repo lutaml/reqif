@@ -1,15 +1,20 @@
+# frozen_string_literal: true
+
 RSpec.describe Reqif::SpecTypes do
   let(:spec_types_xml) do
     <<~XML
-      <SPEC-TYPES>
+      <SPEC-TYPES xmlns="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd">
         <SPEC-OBJECT-TYPE IDENTIFIER="st1" LAST-CHANGE="2023-10-26T12:00:00Z" LONG-NAME="Requirement Type">
-          <ATTRIBUTE-DEFINITIONS>
+          <SPEC-ATTRIBUTES>
             <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="ad1" LAST-CHANGE="2023-10-26T12:00:00Z" LONG-NAME="Description">
-              <TYPE-REF>dt1</TYPE-REF>
-              <DEFAULT-VALUE>No description provided</DEFAULT-VALUE>
-              <MULTI-VALUED>false</MULTI-VALUED>
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>dt1</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+              <DEFAULT-VALUE>
+                <ATTRIBUTE-VALUE-STRING THE-VALUE="No description provided"/>
+              </DEFAULT-VALUE>
             </ATTRIBUTE-DEFINITION-STRING>
-          </ATTRIBUTE-DEFINITIONS>
+          </SPEC-ATTRIBUTES>
         </SPEC-OBJECT-TYPE>
       </SPEC-TYPES>
     XML
@@ -25,12 +30,11 @@ RSpec.describe Reqif::SpecTypes do
     end
 
     it "parses attribute definitions" do
-      attr_def = spec_types.spec_object_type.first.attribute_definitions.first
+      attr_def = spec_types.spec_object_type.first.spec_attributes.attribute_definition_string.first
       expect(attr_def.identifier).to eq("ad1")
       expect(attr_def.long_name).to eq("Description")
-      expect(attr_def.type_ref).to eq("dt1")
-      expect(attr_def.default_value).to eq("No description provided")
-      expect(attr_def.multi_valued).to be false
+      expect(attr_def.type.datatype_definition_string_ref).to eq("dt1")
+      expect(attr_def.default_value.attribute_value_string.the_value).to eq("No description provided")
     end
   end
 end

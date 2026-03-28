@@ -1,4 +1,5 @@
 require "lutaml/model"
+require "hyperlang"
 
 module Reqif
   class ReqIf < Lutaml::Model::Serializable
