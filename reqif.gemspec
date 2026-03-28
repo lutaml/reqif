@@ -32,4 +32,5 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 3.0.0"
 
   spec.add_dependency "lutaml-model", "~> 0.8.0"
+  spec.add_dependency "hyperlang", "~> 0.1.1"
 end

@@ -2,7 +2,7 @@ module Reqif
   class ReqIfHeader < Lutaml::Model::Serializable
     attribute :identifier, :string
     attribute :comment, :string
-    attribute :creation_time, :date_time
+    attribute :creation_time, HighPrecisionDateTime
     attribute :repository_id, :string
     attribute :req_if_tool_id, :string
     attribute :req_if_version, :string

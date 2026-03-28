@@ -8,9 +8,10 @@ module Reqif
     xml do
       element "EMBEDDED-VALUE"
       namespace Namespace
+      ordered
 
       map_attribute "KEY", to: :key
-      map_attribute "OTHER-CONTENT", to: :other_content
+      map_attribute "OTHER-CONTENT", to: :other_content, render_empty: true
     end
   end
 end

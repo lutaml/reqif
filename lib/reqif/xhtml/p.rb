@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "lutaml/model"
 
 module Reqif
@@ -8,9 +10,9 @@ module Reqif
       xml do
         element "p"
         namespace Namespace
+
         map_content to: :content
       end
     end
   end
 end
-

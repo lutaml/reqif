@@ -9,7 +9,7 @@ module Reqif
 #   </MODULE-DEFINITION>
 
       attribute :ddc_mode, :string
-      attribute :specification_ref, StringType
+      attribute :specification_ref, ::Reqif::Doors::StringType
 
       xml do
         element "MODULE-DEFINITION"
