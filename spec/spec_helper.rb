@@ -32,21 +32,19 @@ module Lutaml
                 namespace_class: context.namespace_class,
                 reason: "Priority 1: Input used default format - preserve it",
               )
-            else
+            elsif context.namespace_class.prefix_default.nil?
               # input_format is :prefix but prefix_default might be nil
               # Fall back to default format to avoid ArgumentError
-              if context.namespace_class.prefix_default.nil?
-                Decision.default(
-                  namespace_class: context.namespace_class,
-                  reason: "Priority 1: No prefix_default - use default format",
-                )
-              else
-                Decision.prefix(
-                  prefix: context.namespace_class.prefix_default,
-                  namespace_class: context.namespace_class,
-                  reason: "Priority 1: Input used prefix format - preserve it",
-                )
-              end
+              Decision.default(
+                namespace_class: context.namespace_class,
+                reason: "Priority 1: No prefix_default - use default format",
+              )
+            else
+              Decision.prefix(
+                prefix: context.namespace_class.prefix_default,
+                namespace_class: context.namespace_class,
+                reason: "Priority 1: Input used prefix format - preserve it",
+              )
             end
           end
         end

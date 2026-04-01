@@ -9,7 +9,7 @@ RSpec.describe Reqif do
 
   describe "XML round-trip conversion" do
     xml_files = Dir[fixtures_dir.join("**", "*.xml")] +
-                Dir[fixtures_dir.join("**", "*.reqif")]
+      Dir[fixtures_dir.join("**", "*.reqif")]
 
     # def check_parsed_content(parsed, reparsed)
     #   %i[
