@@ -68,7 +68,10 @@ module Reqif
     def self.cast(value, options = {})
       return nil if value.nil?
 
-      Lutaml::Model::Services::Type::Validator::Number.validate!(value, options) unless options.equal?(EMPTY_OPTIONS)
+      unless options.equal?(EMPTY_OPTIONS)
+        Lutaml::Model::Services::Type::Validator::Number.validate!(value,
+                                                                   options)
+      end
 
       case value
       when String then BigDecimal(value).to_f

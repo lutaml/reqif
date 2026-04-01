@@ -25,7 +25,7 @@ RSpec.describe Reqif::ReqIf do
       generated = parsed.to_xml(
         pretty: true,
         declaration: true,
-        encoding: "utf-8"
+        encoding: "utf-8",
       )
 
       # cleaned_xml_string = xml_string

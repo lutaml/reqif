@@ -5,8 +5,7 @@ require "lutaml/model/type/date_time"
 module Reqif
   # High precision DateTime type that preserves fractional seconds precision
   class HighPrecisionDateTime < Lutaml::Model::Type::DateTime
-    attr_accessor :precision
-    attr_accessor :has_explicit_timezone
+    attr_accessor :precision, :has_explicit_timezone
 
     def initialize(value = nil)
       super

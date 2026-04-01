@@ -8,7 +8,8 @@ module Reqif
   autoload :AlternativeId, "reqif/alternative_id.rb"
   autoload :AttributeDefinitionBoolean, "reqif/attribute_definition_boolean.rb"
   autoload :AttributeDefinitionDate, "reqif/attribute_definition_date.rb"
-  autoload :AttributeDefinitionEnumeration, "reqif/attribute_definition_enumeration.rb"
+  autoload :AttributeDefinitionEnumeration,
+           "reqif/attribute_definition_enumeration.rb"
   autoload :AttributeDefinitionInteger, "reqif/attribute_definition_integer.rb"
   autoload :AttributeDefinitionReal, "reqif/attribute_definition_real.rb"
   autoload :AttributeDefinitionString, "reqif/attribute_definition_string.rb"
@@ -24,7 +25,8 @@ module Reqif
   autoload :CoreContent, "reqif/core_content.rb"
   autoload :DatatypeDefinitionBoolean, "reqif/datatype_definition_boolean.rb"
   autoload :DatatypeDefinitionDate, "reqif/datatype_definition_date.rb"
-  autoload :DatatypeDefinitionEnumeration, "reqif/datatype_definition_enumeration.rb"
+  autoload :DatatypeDefinitionEnumeration,
+           "reqif/datatype_definition_enumeration.rb"
   autoload :DatatypeDefinitionInteger, "reqif/datatype_definition_integer.rb"
   autoload :DatatypeDefinitionReal, "reqif/datatype_definition_real.rb"
   autoload :DatatypeDefinitionString, "reqif/datatype_definition_string.rb"
