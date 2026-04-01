@@ -48,19 +48,7 @@ RSpec.describe Reqif do
             encoding: "utf-8",
           )
 
-          # cleaned_xml_string = xml_string
-          cleaned_xml_string = xml_string
-            .gsub(/^<\?xml.*\n/, "")
-          # cleaned_xml_string = xml_string
-          #   .gsub(/^<\?xml-model.*\n/, "")
-          #   .gsub(/^<\?xml-stylesheet.*\n/, "")
-
-          # puts "original---------"
-          # puts cleaned_xml_string
-          # puts "------"
-          # puts generated
-
-          expect(generated).to be_xml_equivalent_to(cleaned_xml_string)
+          expect(generated).to be_xml_equivalent_to(xml_string)
         end
       end
     end
