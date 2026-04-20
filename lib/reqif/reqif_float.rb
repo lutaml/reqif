@@ -67,6 +67,7 @@ module Reqif
 
     def self.cast(value, options = {})
       return nil if value.nil?
+      return value if Lutaml::Model::Utils.uninitialized?(value)
 
       unless options.equal?(EMPTY_OPTIONS)
         Lutaml::Model::Services::Type::Validator::Number.validate!(value,
