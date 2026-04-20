@@ -82,8 +82,7 @@ module Reqif
     attribute :rp, Hyperlang::Xhtml::Rp, collection: true
     attribute :rbc, Hyperlang::Xhtml::Rbc, collection: true
     attribute :rtc, Hyperlang::Xhtml::Rtc, collection: true
-    attribute :content, :string
-
+    attribute :content, :string, collection: true
     xml do
       element "XHTML-CONTENT"
       namespace Namespace
