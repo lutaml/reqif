@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- FROM:
 https://git.ebersold.fr/?p=antcc.git;a=blob_plain;f=examples/reqif/MAG8000-LTE-FeatureSpecReqBL4.reqif;h=e92beb7c86845368a811fdb06aba7517b68ee1fd;hb=f807fd1dda382601c2decd504d4c61f70c13cc7e
 -->
-<?xml version="1.0" encoding="UTF-8"?>
 <REQ-IF xmlns="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <THE-HEADER>
     <REQ-IF-HEADER IDENTIFIER="_ae71eb64-2aa6-4780-9212-bda594614a7f">
