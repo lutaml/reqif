@@ -6,7 +6,6 @@ source "https://rubygems.org"
 gemspec
 
 gem "canon"
-gem "lutaml-model", github: "lutaml/lutaml-model", branch: "main"
 gem "moxml"
 gem "nokogiri"
 gem "rake", "~> 13.0"
